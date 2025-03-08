@@ -62,3 +62,72 @@ int gcd(int a, int b) {
 int lcm(int a, int b) {
     return (a / gcd(a, b)) * b;  // Tránh tràn số
 }
+#8  In số lượng ước của n là số nguyên tố : 36=2^2+3^2  -> số lượng = 2 
+int ham6(int n){
+  int dem=0;
+  for(int i=2;i*i<=n;i++){
+   if(n%i==0){
+     dem++;
+     while(n%i==0){
+       n/=i;
+     }
+   }
+  }
+  if(n>1) dem++;
+  return dem;
+}
+không được if(ham2(n%8==0)) -> phải là if(ham2(n)%8==0) 
+#9 Một số được coi là thuần nguyên tố nếu nó là số nguyên tố, tất cả các chữ số là nguyên tố và tổng chữ số của
+nó cũng là một số nguyên tố. Bài toán đặt ra là đếm xem trong một đoạn giữa hai số nguyên cho trước có bao
+nhiêu số thuần nguyên tố.
+int thuannt(int n){
+  int sum=0;
+  while(n){
+    int r=n%10;
+    if(!ham1(r)) return 0;
+    sum+=r;
+    n/=10;
+  }
+  return ham1(sum);
+}
+int main(){
+  int a,b; cin>>a>>b;
+  int dem=0;
+  for(int i=a;i<=b;i++){
+    if(thuannt(i)&&ham1(i)) dem++;
+  }
+  cout<<dem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
