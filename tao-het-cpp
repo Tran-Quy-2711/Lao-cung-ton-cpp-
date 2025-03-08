@@ -113,12 +113,80 @@ ll fibo(ll n){
   }
   return 0;
 }
-
-
-
-
-
-
+#11 Nhiệm vụ của bạn là in ra N số Fibonacci đầu tiên, một số đầu tiên trong dãy Fibonacci là 1, 1, 2, 3, 5, 8....
+ll fibo(ll n){
+  if(n>=1) cout<<1<<endl;   // vì nếu n==1 in 1 và kết thúc ko xét n==2 
+  if(n>=2) cout<<1<<endl;
+  ll f1=1,f2=1;
+  for(int i=3;i<=n;i++){   
+    ll fn=f1+f2;
+    cout<<fn<<" "<<endl;
+    f1=f2;
+    f2=fn;
+  }
+}
+Nhiệm vụ của bạn là hãy tìm số thuộc dãy số Fibonacci nhỏ nhất lớn hơn hoặc bằng số N đã cho. Biết một số
+đầu tiên trong dãy Fibonacci là: 1, 1, 2, 3, 5, 8, 13....
+ll fibo(ll n){
+  ll f1=1,f2=1;
+  ll fn=f1+f2;
+  while(f2<n){
+    fn=f1+f2;
+    f1=f2;
+    f2=fn;
+  }
+  return f2;
+}
+#12 Hãy liệt kê các cặp số nguyên tố cùng nhau và có giá trị khác nhau trong đoạn [a,b] theo thứ tự từ nhỏ đến lớn:  // ucll của 2 cặp a b là 1 
+void goldbach(int a,int b){
+  for(int i=a;i<b;i++){
+    for(int j=i+1;j<=b;j++){
+      if(__gcd(i,j)==1) cout<<"("<<i<<","<<j<<")"<<endl;
+    }
+  }
+}
+#13 Cho số tự nhiên N. Nhiệm vụ của bạn là in ra ước số nguyên tố nhỏ nhất của các số từ 1 đến N. Ước số nguyên
+tố nhỏ nhất của 1 là 1. Ước số nguyên tố nhỏ nhất của các số chẫn là 2. Ước số nguyên tố nhỏ nhất của các số
+nguyên tố là chính nó.
+int ntnn(int n){
+  if(n==1) return 1;
+  if(n%2==0) return 2;
+  for(int i=3;i*i<=n;i+=2){
+    if(n%i==0) return i;
+  }
+  if(n>1) return n;
+}
+phân tích mũ thừa số nguyên tố
+void phantich(int n){
+  for(int i=2;i*i<=n;i++){
+    if(n%i==0){
+      int mu=0;
+      while(n%i==0){
+        ++mu;
+        n/=i;
+      }
+      cout<<i<<"^"<<mu<<" * ";
+    }
+  }
+  if(n>1) cout<<n<<"^1";
+}
+#14 số sphenic phải 3 thừa số nguyên tố khác nhau 
+ll sphenic(int n){
+  int dem=0;
+  for(int i=2;i*i<=n;i++){
+    if(n%i==0){
+      int mu=0;
+      while(n%i==0){
+        mu++;
+        n/=i;
+      }
+      if(mu>1) return false;
+      dem++;
+    }
+  }
+  if(n>1) dem++;
+  return dem==3;
+}
 
 
 
