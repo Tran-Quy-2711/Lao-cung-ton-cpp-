@@ -1,3 +1,5 @@
+1,5,6,7,11,12,15,16,17,18,19,21,22,26,27,28,29,30 
+tìm ước thì nếu xét n%i==0 và i!=n/i 
 #1 kiểm tra số nguyên tố :
 bool ktra(int n){
   for(int i=2;i*i<=n;i++){
@@ -187,12 +189,63 @@ ll sphenic(int n){
   if(n>1) dem++;
   return dem==3;
 }
-
-
-
-
-
-
+Cho số tự nhiên N. Nhiệm vụ của bạn là hãy kiểm tra N có phải là số Smith hay không. Một số được gọi là số
+Smith nếu N không phải là số nguyên tố và có tổng các chữ số của N bằng tổng các chữ số của các thừa số
+nguyên tố trong phân tích của N. Ví dụ N = 666 có các thừa số nguyên tố là 2, 3, 3, 37 có tổng các chữ số là 18.
+=> tổng các chữ số thì mình lấy từng số rồi cộng 
+int thuant(int n){
+  if(ktra(n)) return 0;
+  int sum=0;
+  int tongcs=smith(n);
+  for(int i=2;i*i<=n;i++){
+    if(n%i==0){
+      sum+=smith(i);
+      while(n%i==0){
+        n/=i;
+      }
+    }
+  }
+  if(n>1) sum+=smith(n);
+  return tongcs==sum;
+}
+Một số được coi là số đẹp nếu nó là số thuận nghịch, có chứa ít nhất một chữ số 6, và tổng các chữ số của nó
+có chữ số cuổi cùng là 8. Viết chương trình liệt kê các số đẹp trong đoạn giữa 2 số nguyên cho trước, các số
+cách nhau một dấu cách. 
+int tn(int n){
+  bool check6=false;
+  int rev=0;
+  int tmp=n;
+  int sum=0;
+  while(n){
+    rev=rev*10+n%10;
+    sum+=n%10;
+    if(n%10==6) check6=true;
+    n/=10;
+  }
+  if(rev==tmp&&check6&&sum%10==8) return 1;
+  return 0;
+}
+Viết chương trình cho phép nhập vào n và liệt kê các số nguyên tố thỏa mãn nhỏ hơn hoặc bằng n và có chữ
+số cuối cùng lớn nhất. Có bao nhiêu số như vậy
+int cn(int n){
+  int r=n%10;
+  while(n){
+    if(n%10>r) return 0;
+    n/=10;
+  }
+  return 1;
+}
+int main(){
+  int n; cin>>n;
+  int dem=0;
+  for(int i=1;i<=n;i++){
+    if(ktra(i)&&cn(i)) {
+      cout<<i<<" ";
+      dem++;
+    }
+  }
+  cout<<endl<<dem;
+}
 
 
 
