@@ -1,0 +1,27 @@
+I.	Kiểu dữ liệu char
+•	Định Nghĩa:
+a.	Giải thích char là kiểu dữ liệu dùng để lưu trữ ký tự.
+b.	Kích thước của char là 1 byte và lưu trữ mã ASCII.
+II.	Kiểu dữ liệu string
+•	 Định Nghĩa:
+o	Giải thích std::string là một lớp trong thư viện chuẩn C++ để lưu trữ chuỗi ký tự.
+o	Nó cung cấp nhiều phương thức (method) để thao tác với chuỗi.
+III.	Các toán tử so sánh (TRUE OR FALSE)
+•	 Giới Thiệu Các Toán Tử:
+o	==, !=, <, >, <=, >=.
+•	Chú Thích:
+o	Giải thích cách các toán tử so sánh hoạt động trên số và chuỗi.
+IV.	Ép kiểu
+1.	 C-style cast
+•	Giới thiệu về C-style cast và cách sử dụng.
+2.	Static_cast
+•	Giới thiệu về static_cast và cách sử dụng
+3.	Nên dùng c-style cast hay static_cast (được hỗ trợ trực tiếp bởi trình biên dịch C++)
+•	static_cast là cách rõ ràng và an toàn hơn để thực hiện chuyển đổi kiểu trong C++ so với C-style cast.
+V.	Xử lý bộ đệm khi nhập dữ liệu và cách lấy giữ liệu cả một dòng trong C++
+ 1. Vấn Đề với Bộ Đệm
+Khi bạn sử dụng std::cin để nhập dữ liệu, đôi khi có thể gặp phải vấn đề với bộ đệm nếu người dùng nhập nhiều giá trị liên tiếp hoặc nhập dữ liệu không đúng định dạng. Điều này có thể dẫn đến việc nhập không được xử lý đúng cách, hoặc giá trị không mong muốn được lưu lại trong bộ đệm và ảnh hưởng đến các lần nhập tiếp theo.
+2. Sử Dụng std::getline Để Đọc Dòng
+•	Giải thích: std::getline  là một phần của thư viện chuẩn C++ và không phải là một phần của cú pháp ngôn ngữ trực tiếp, do đó nó cần phải được bao gồm từ thư viện string.
+•	Trong nhiều môi trường phát triển và với nhiều trình biên dịch, thư viện <iostream> có thể bao gồm một số phần của <string> để hỗ trợ các chức năng liên quan đến chuỗi.
+•	Điều này có thể khiến bạn không thấy lỗi khi thiếu <string>, nhưng nó không phải là hành vi chính thức và không nên được dựa vào.
