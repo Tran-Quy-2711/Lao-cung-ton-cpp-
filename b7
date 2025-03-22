@@ -1,0 +1,27 @@
+Truy Cập Ngoài Vùng Của Mảng
+Trong C++, nếu bạn khai báo một mảng với 10 phần tử như thế này:
+int arr[10];
+mảng arr sẽ có các chỉ số hợp lệ từ 0 đến 9. Nếu bạn cố gắng truy cập phần tử thứ 11, chẳng hạn như arr[10], bạn đang truy cập vào vùng nhớ ngoài phạm vi của mảng.
+Khi bạn thực hiện hành động này, sẽ không có thông báo lỗi từ trình biên dịch, và chương trình của bạn có thể tiếp tục chạy. Tuy nhiên, việc truy cập ra ngoài phạm vi mảng là một hành vi không được xác định (undefined behavior), có thể dẫn đến các vấn đề nghiêm trọng như:
+1.	Lỗi về dữ liệu: Bạn có thể đọc hoặc ghi vào vùng bộ nhớ không được cấp phát cho mảng, điều này có thể ghi đè lên dữ liệu của các biến khác hoặc dẫn đến hành vi không mong muốn.
+2.	Sập chương trình: Có thể chương trình của bạn sẽ gặp sự cố và bị đóng bất ngờ nếu phần bộ nhớ đó không được phép truy cập hoặc gây ra xung đột với các phần khác của hệ thống.
+3.	Lỗ hổng bảo mật: Truy cập ra ngoài phạm vi có thể tạo ra lỗ hổng bảo mật, vì bạn có thể vô tình đọc hoặc ghi dữ liệu nhạy cảm.
+Tính Kích Thước Của Mảng
+1. Đối với mảng tĩnh (cố định kích thước):
+•	Sử dụng sizeof để tính kích thước:
+#include <iostream>
+
+int main() {
+    int arr[10]; // Mảng có 10 phần tử
+    
+    // Tính số lượng phần tử
+    size_t size = sizeof(arr) / sizeof(arr[0]);
+    
+    std::cout << "Số lượng phần tử trong mảng: " << size << std::endl;
+    
+    return 0;
+}
+Giải thích:
+o	sizeof(arr): Kích thước toàn bộ mảng tính bằng byte.
+o	sizeof(arr[0]): Kích thước của một phần tử tính bằng byte.
+o	Chia hai giá trị để có số lượng phần tử.
