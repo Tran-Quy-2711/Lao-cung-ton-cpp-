@@ -1,0 +1,70 @@
+1. Truyền Mảng Vào Hàm
+Trong C++, khi bạn truyền một mảng vào hàm, bạn thực sự truyền con trỏ đến phần đầu của mảng. Điều này có nghĩa là hàm nhận được địa chỉ của mảng, không phải bản sao của nó.
+2. Kích Thước Mảng
+Khi bạn truyền một mảng vào hàm, bạn chỉ truyền con trỏ đến mảng, nên kích thước mảng không được tự động truyền. Do đó, bạn thường cần phải truyền kích thước của mảng như một tham số riêng biệt.
+#include <iostream>
+
+// Hàm thay đổi giá trị của mảng
+void modifyArray(int arr[], int size)
+{
+    for (int i = 0; i < size; ++i)
+    {
+        arr[i] = arr[i] * 2; // Nhân mỗi phần tử với 2
+    }
+}
+
+int main()
+{
+    int myArray[] = {1, 2, 3, 4, 5}; // Mảng gốc
+    int size = sizeof(myArray) / sizeof(myArray[0]);
+
+    std::cout << "Array before modification: ";
+    for (int i = 0; i < size; ++i)
+    {
+        std::cout << myArray[i] << " ";
+    }
+    std::cout << std::endl;
+
+    modifyArray(myArray, size); // Truyền mảng vào hàm
+
+    std::cout << "Array after modification: ";
+    for (int i = 0; i < size; ++i)
+    {
+        std::cout << myArray[i] << " ";
+    }
+    std::cout << std::endl;
+
+    return 0;
+}
+
+
+3. Độ Dài của Chuỗi Ký Tự
+Khi làm việc với chuỗi ký tự trong C++, điều quan trọng là hiểu cách xác định độ dài của chuỗi và cách truyền chuỗi vào hàm.
+a. Đọc Độ Dài của Chuỗi
+•	Hàm strlen: Hàm strlen từ thư viện <cstring> được sử dụng để tính độ dài của chuỗi ký tự (không bao gồm ký tự null '\0').
+ #include <cstring> // Để sử dụng strlen
+
+char str[] = "Hello, World!";
+int length = strlen(str); // length = 13
+
+•	Ký Tự Null ('\0'): Để strlen hoạt động chính xác, chuỗi ký tự phải được kết thúc bằng ký tự null. Ký tự null không được tính trong độ dài trả về bởi strlen.
+b. Đọc Chuỗi từ Bàn Phím
+Khi đọc chuỗi ký tự từ bàn phím, bạn có thể sử dụng std::cin.getline để đảm bảo rằng bạn đọc toàn bộ dòng và tránh lỗi tràn bộ nhớ.
+ 
+
+#include <iostream>
+#include <cstring>
+
+int main() {
+    char input[81]; // Kích thước mảng đủ lớn để chứa chuỗi
+
+    std::cout << "Enter up to 80 characters: ";
+    std::cin.getline(input, 81); // Đọc tối đa 80 ký tự và thêm ký tự null
+
+    int length = strlen(input); // Đọc độ dài chuỗi
+    std::cout << "Length of the input string is: " << length << std::endl;
+
+    return 0;
+}
+
+
