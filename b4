@@ -1,0 +1,105 @@
+I.	Câu Lệnh if
+1.	Lý thuyết
+ Câu lệnh if được sử dụng để thực hiện một khối lệnh khi điều kiện được kiểm tra là đúng. Đây là cấu trúc điều kiện cơ bản nhất trong C++.
+Cú pháp:
+if (condition) {
+    // Code to execute if condition is true
+}
+Bài Tập 1: Viết chương trình kiểm tra số nguyên
+Nội dung: Viết một chương trình kiểm tra xem một số nguyên có phải là số dương hay không. In ra thông báo phù hợp.
+Yêu cầu:
+•	Nhập số nguyên từ người dùng.
+•	Sử dụng câu lệnh if để kiểm tra số đó và in thông báo.
+Bài Tập 2: Kiểm tra số nguyên dương, âm, hoặc bằng 0
+Nội dung: Viết một chương trình để kiểm tra số nguyên và in ra thông báo về số đó là dương, âm, hoặc bằng 0.
+Yêu cầu:
+•	Nhập số nguyên từ người dùng.
+•	Sử dụng câu lệnh if-else if-else để kiểm tra và in thông báo.
+
+2.	 Các toán tử logic
+a.	 Toán Tử AND (&&)
+•	Mô Tả: Trả về true nếu cả hai điều kiện đều đúng.
+•	Cú Pháp: condition1 && condition2
+Bài Tập 1: Kiểm Tra Điều Kiện Đăng Ký
+Nội dung: Viết một chương trình yêu cầu người dùng nhập tuổi và điểm số để kiểm tra xem người đó có đủ điều kiện đăng ký học không. (Tuổi từ 18-30 và điểm số từ 7 trở lên thì được đăng ký).
+Yêu cầu:
+•	Nhập tuổi và điểm số từ người dùng.
+•	Sử dụng toán tử AND để kiểm tra điều kiện.
+Bài Tập 2: Kiểm Tra Đăng Nhập
+Nội dung: Viết một chương trình yêu cầu người dùng nhập tên đăng nhập và mật khẩu và kiểm tra xem người dùng có quyền truy cập không. (Tên đăng nhập là "admin" và mật khẩu là "12345").
+Yêu cầu:
+•	Nhập tên đăng nhập và mật khẩu từ người dùng.
+•	Sử dụng toán tử and (&&) để kiểm tra điều kiện.
+b.	 Toán Tử OR (||)
+•	Mô Tả: Trả về true nếu ít nhất một trong các điều kiện đúng.
+•	Cú Pháp: condition1 || condition2
+c.	Toán Tử NOT (!)
+•	Mô Tả: Đảo ngược giá trị logic của điều kiện (true thành false và ngược lại).
+•	Cú Pháp: !condition
+Bài Tập 3: Kiểm Tra Sự Hiện Diện
+Nội dung: Viết một chương trình yêu cầu người dùng nhập một giá trị boolean và kiểm tra xem giá trị đó có phải là false không. (Sử dụng toán tử NOT).
+Yêu cầu:
+•	Nhập giá trị boolean từ người dùng.
+•	Sử dụng toán tử NOT để kiểm tra và in thông báo.
+II.	Câu Lệnh switch
+Lý Thuyết
+Câu lệnh switch được sử dụng để kiểm tra một biến hoặc biểu thức với nhiều giá trị khác nhau. Đây là một cách thuận tiện để thay thế nhiều câu lệnh if-else if-else.
+Cú pháp:
+
+ 
+switch (expression) {
+    case value1:
+        // Code to execute if expression == value1
+        break;
+    case value2:
+        // Code to execute if expression == value2
+        break;
+    // more cases...
+    default:
+        // Code to execute if none of the cases match
+}
+Bài Tập 1: Xác định ngày trong tuần
+Nội dung: Viết một chương trình yêu cầu người dùng nhập một số từ 1 đến 7 và in ra tên ngày tương ứng trong tuần.
+Yêu cầu:
+•	Nhập số từ 1 đến 7 từ người dùng.
+•	Sử dụng câu lệnh switch để xác định và in tên ngày.
+Bài Tập 2: Xác định tháng trong năm
+Nội dung: Viết một chương trình yêu cầu người dùng nhập một số từ 1 đến 12 và in ra tên tháng tương ứng trong năm.
+Yêu cầu:
+•	Nhập số từ 1 đến 12 từ người dùng.
+•	Sử dụng câu lệnh switch để xác định và in tên tháng.
+III.	Câu Lệnh goto
+Lý Thuyết
+Câu lệnh goto được sử dụng để nhảy đến một nhãn cụ thể trong mã nguồn. Mặc dù nó có thể hữu ích trong một số trường hợp, việc sử dụng goto thường bị chỉ trích vì có thể làm cho mã nguồn trở nên khó đọc và bảo trì.
+Cú pháp:
+goto label;
+// some code
+label:
+    // code to execute when jumped to label
+Bài Tập 1: Sử dụng goto để nhảy đến nhãn
+Nội dung: Viết một chương trình kiểm tra một số nguyên và sử dụng goto để nhảy đến một nhãn để in thông báo dựa trên giá trị của số đó.
+Yêu cầu:
+•	Nhập số nguyên từ người dùng.
+•	Sử dụng câu lệnh goto để nhảy đến các nhãn dựa trên giá trị của số nguyên.
+Bài Tập 2: Đánh giá và nhảy đến nhãn
+Nội dung: Viết một chương trình sử dụng goto để kiểm tra một số và nhảy đến các nhãn khác nhau để in thông báo nếu số đó lớn hơn 10, nhỏ hơn 10, hoặc bằng 10.
+Yêu cầu:
+•	Nhập số nguyên từ người dùng.
+•	Sử dụng câu lệnh goto để nhảy đến các nhãn khác nhau tùy thuộc vào giá trị của số nguyên.
+
+IV.	Toán Tử Ba Ngôi (Ternary Operator)
+Lý Thuyết
+Toán tử ba ngôi là một toán tử điều kiện rút gọn, thường được sử dụng để thay thế câu lệnh if-else trong những trường hợp đơn giản. Toán tử này cho phép bạn viết điều kiện và các giá trị cần trả về trong một dòng mã.
+Cú pháp:
+condition ? expression_if_true : expression_if_false;
+Bài Tập Thực Hành
+Bài Tập 1: Kiểm tra số dương hay âm
+Nội dung: Viết một chương trình kiểm tra xem một số nguyên là số dương hay âm bằng cách sử dụng toán tử ba ngôi. In ra thông báo phù hợp.
+Yêu cầu:
+•	Nhập số nguyên từ người dùng.
+•	Sử dụng toán tử ba ngôi để kiểm tra số đó và in thông báo.
+Bài Tập 2: Xác định lớn hơn hay bằng
+Nội dung: Viết một chương trình kiểm tra xem số nguyên đầu tiên có lớn hơn số nguyên thứ hai không, bằng cách sử dụng toán tử ba ngôi. In ra thông báo phù hợp.
+Yêu cầu:
+•	Nhập hai số nguyên từ người dùng.
+•	Sử dụng toán tử ba ngôi để kiểm tra và in thông báo về mối quan hệ giữa hai số.
