@@ -1,0 +1,14 @@
+#1 tính tổng 1 : n+s(n-1) -> 1+2+3+4+ .. + n ví dụ nhập 5 : khi nào s(0) bằng 0 thì tính tổng 
+#2 tính tổng 2 : n*n+s(n-1) -> 1^2 + 2^2 + 3^2 +4^2 +. + n^2 
+#3  ((n%2==0)?n:-n) nếu n chẵn thì ta cộng n lẻ thì ta trừ rồi dùng + s(n-1) 
+#4 độ phức tạp của thuật toán : có 5 kiểu : O(1) -> O(logN) -> O(sqrt(n)) -> O(n) -> O(n^2),O(2^n) => chạy nhanh nhất là O(1) và chậm nhất là O(n^2),O(2^n) 
+  + O(1): + , - , * , / % , cin , cout đều gọi là O(1) 
+  + O(n): 1+2+3+4+ .. + n nếu dùng công thức n* (n + 1)/2 thì nó sẽ trở thành O(1)   
+  + O(sqrt(n)) : có căn n 
+int result = sqrt(n) + log(n) + n; -> Không có vòng lặp, chỉ tính toán một lần : O(1) 
+for (int i = 1; i <= n; i++) {
+    int x = sqrt(i);  // Có căn bậc hai, nhưng vòng lặp vẫn chạy O(n)
+}    
+Vòng lặp chạy từ 1 -> n nên vẫn là O(1) 
+=> Quy tắc quan trọng: Chỉ lấy bậc lớn nhất, bỏ các hệ số nhỏ. vd: O(3^2+5n+4) -> độ phức tạp là O(n^2) 
+Hai vòng lặp lồng nhau -> O(n^2) , nếu hai vòng lặp nhân nhau thì O(2^n) 
