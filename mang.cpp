@@ -1,3 +1,4 @@
+số nguyên tố bắt đầu từ số 2 -> sqrt(n) // if(n%i==0) return 0;
 for (int x : a)
     cout << x << " ";
 tương đương với:
